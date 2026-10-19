@@ -1,0 +1,32 @@
+/* Dos listas desplegables una al lado de la otra; en pantallas angostas
+   bajan una debajo de la otra. */
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.filter-bar__field {
+  display: grid;
+  flex: 1 1 10rem;
+  gap: 0.5rem;
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.filter-bar__field select {
+  min-height: 3rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  font: inherit;
+  font-weight: 400;
+  color: var(--color-ink);
+}
+
+.filter-bar__field select:focus {
+  border-color: var(--color-ink);
+  outline: none;
+}

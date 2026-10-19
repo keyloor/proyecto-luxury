@@ -23,10 +23,10 @@ const NavBar = () => {
             Inicio
           </NavLink>
           <NavLink
-            to="/cars"
+            to="/apartamentos"
             className={({ isActive }) => (isActive ? "active" : "")}
           >
-            Autos
+            Apartamentos
           </NavLink>
           <NavLink
             to="/contact"

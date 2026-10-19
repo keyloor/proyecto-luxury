@@ -1,0 +1,98 @@
+/* Tarjeta de apartamento: foto arriba, datos abajo. Al pasar el mouse sube un
+   poco y la foto se acerca. */
+
+.apartment-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-alt);
+  transition:
+    transform var(--duration) var(--ease),
+    box-shadow var(--duration) var(--ease);
+}
+
+.apartment-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1.5rem 3rem -1.5rem rgba(10, 11, 13, 0.35);
+}
+
+.apartment-card__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--color-dark);
+}
+
+.apartment-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease);
+}
+
+.apartment-card:hover .apartment-card__media img {
+  transform: scale(1.05);
+}
+
+/* Ubicación como ficha de vidrio sobre la foto */
+.apartment-card__location {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.apartment-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem 1.5rem 1.25rem;
+}
+
+.apartment-card__name {
+  font-size: 1.375rem;
+}
+
+/* Habitaciones, baños y área separados por un punto */
+.apartment-card__specs {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: var(--text-sm);
+  color: var(--color-ink-soft);
+}
+
+.apartment-card__specs span + span::before {
+  content: "·";
+  margin-inline: 0.5rem;
+}
+
+.apartment-card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  margin-top: auto;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-line);
+}
+
+.apartment-card__price {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.apartment-card__price small {
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--color-ink-soft);
+}

@@ -8,7 +8,7 @@ type SearchBarProps = {
 const SearchBar = ({search, onSearchChange}: SearchBarProps) => {
   return (
     <label className="search-bar">
-      <span className="search-bar__label">Encuentra tu próximo auto</span>
+      <span className="search-bar__label">Buscar por nombre</span>
       <span className="search-bar__field">
         <svg
           className="search-bar__icon"
@@ -27,7 +27,7 @@ const SearchBar = ({search, onSearchChange}: SearchBarProps) => {
         <input
           className="search-bar__input"
           type="search"
-          placeholder="Buscar auto por nombre..."
+          placeholder="Ej.: Penthouse, Loft, Torre..."
           value={search}
           onChange={(e) => onSearchChange(e.target.value)}
         />
