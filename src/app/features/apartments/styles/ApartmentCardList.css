@@ -1,0 +1,8 @@
+/* Rejilla de tarjetas: tantas columnas como quepan, de al menos 260px. */
+
+.apartment-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  gap: clamp(1rem, 2.5vw, 2rem);
+  margin-top: 2rem;
+}

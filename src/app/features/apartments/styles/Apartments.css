@@ -1,0 +1,36 @@
+/* Catálogo: título, fila de búsqueda y filtros, y la rejilla debajo. */
+
+.apartments-page {
+  padding-block: var(--section-space);
+}
+
+.apartments-page h1 {
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+}
+
+/* Búsqueda y filtros en una fila; en pantallas angostas se apilan */
+.apartments-page__filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.apartments-page__filters .search-bar {
+  flex: 2 1 18rem;
+  margin: 0;
+}
+
+.apartments-page__filters .filter-bar {
+  flex: 1 1 20rem;
+}
+
+.apartments-page__empty {
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-alt);
+  color: var(--color-ink-soft);
+}
