@@ -1,0 +1,63 @@
+/* Sección de destacados. Usa una rejilla de tres columnas: los márgenes a los
+   lados y el contenido al centro. Así el texto y las tarjetas quedan alineados
+   con el contenedor, y Experience puede ocupar todo el ancho. */
+
+.featured {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(var(--gutter), 1fr)
+    [content-start] minmax(0, var(--container))
+    [content-end] minmax(var(--gutter), 1fr)
+    [full-end];
+  row-gap: 1rem;
+  padding-top: var(--section-space);
+}
+
+.featured > * {
+  grid-column: content;
+}
+
+.featured__title {
+  max-width: 16ch;
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+}
+
+/* En pantallas anchas, el enlace va a la derecha, en la misma fila del título */
+.featured__all {
+  justify-self: start;
+}
+
+@media (min-width: 700px) {
+  /* Los dos van a la fila 2; si solo el enlace tuviera fila fija,
+     el título se correría a la fila siguiente */
+  .featured__title {
+    grid-row: 2;
+  }
+
+  .featured__all {
+    grid-row: 2;
+    justify-self: end;
+    align-self: end;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.featured > .experience {
+  grid-column: full;
+  margin-top: var(--section-space);
+}
+
+/* El encabezado de la sección aparece al bajar, una línea tras otra.
+   Cada una termina su entrada un poco más tarde que la anterior. */
+@supports (animation-timeline: view()) {
+  .featured > .eyebrow,
+  .featured__title,
+  .featured__all {
+    animation: reveal-up linear both;
+    animation-timeline: view();
+  }
+
+  .featured > .eyebrow { animation-range: entry 0% entry 80%; }
+  .featured__title { animation-range: entry 10% entry 90%; }
+  .featured__all { animation-range: entry 20% entry 100%; }
+}

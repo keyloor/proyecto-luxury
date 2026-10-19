@@ -1,0 +1,55 @@
+/* Información del auto en la ficha: enlace de regreso, ubicación, nombre,
+   tres datos grandes, descripción y características. Las tres secciones
+   (descripción y características con sus h2) comparten el mismo ritmo vertical. */
+
+.car-info {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+}
+
+.car-info .text-link {
+  justify-self: start;
+  margin-bottom: 1rem;
+}
+
+.car-info__location {
+  font-size: var(--text-sm);
+  color: var(--color-ink-soft);
+}
+
+.car-info h1 {
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+}
+
+/* Año, kilometraje y pasajeros: el número grande y la unidad pequeña */
+.car-info__specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2.5rem;
+  padding-block: 1.25rem;
+  border-block: 1px solid var(--color-line);
+  font-size: var(--text-sm);
+  color: var(--color-ink-soft);
+}
+
+.car-info__specs span {
+  display: grid;
+}
+
+.car-info__specs strong {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+}
+
+.car-info h2 {
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.car-info p:not(.car-info__location) {
+  max-width: 60ch;
+  color: var(--color-ink-soft);
+}

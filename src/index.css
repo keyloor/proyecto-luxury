@@ -1,0 +1,214 @@
+/* Estilos globales: variables de diseño, base y piezas que usan varios componentes.
+   Los estilos de cada componente están en la carpeta styles/ de su feature. */
+
+:root {
+  /* Colores: casi todo negro y blanco, como un catálogo de autos de lujo */
+  --color-ink: #0a0b0d;
+  --color-ink-soft: #5f6166;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f2f2f4;
+  --color-line: #dcdde0;
+  --color-dark: #0e0f12;
+  --color-on-dark: #f7f7f8;
+  --color-on-dark-soft: #a9abb0;
+
+  /* Tipografía */
+  --font-base: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  /* letra ancha de emblema, solo para la K del logo */
+  --font-display: "Syncopate", "Arial Black", sans-serif;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+
+  /* Medidas */
+  --container: 1320px;
+  --gutter: clamp(1rem, 4vw, 3.5rem);
+  --section-space: clamp(4rem, 9vw, 8rem);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+
+  /* Movimiento */
+  --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --duration: 0.35s;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-base);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--color-ink);
+  background: var(--color-surface);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  /* reparte las palabras entre líneas para no dejar una sola al final */
+  text-wrap: balance;
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-on-dark);
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* Contenedor centrado con margen lateral que se adapta al ancho */
+.container {
+  width: min(100% - 2 * var(--gutter), var(--container));
+  margin-inline: auto;
+}
+
+/* Texto pequeño que va encima de un título */
+.eyebrow {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+}
+
+/* Enlace de texto con flecha */
+.text-link {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--duration) var(--ease);
+}
+
+.text-link:hover {
+  border-color: currentColor;
+}
+
+/* Páginas que cargan datos: aire arriba y abajo, y mensajes de estado
+   (cargando, error, sin resultados) */
+.page-section {
+  padding-block: var(--section-space);
+}
+
+.status-message {
+  color: var(--color-ink-soft);
+}
+
+.status-message--error {
+  color: #b3261e;
+}
+
+.empty-state {
+  display: grid;
+  justify-items: start;
+  gap: 1rem;
+}
+
+/* Botones */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  padding: 0.75rem 1.75rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background-color var(--duration) var(--ease),
+    color var(--duration) var(--ease),
+    border-color var(--duration) var(--ease);
+}
+
+.btn--dark {
+  background: var(--color-ink);
+  color: var(--color-on-dark);
+}
+
+.btn--dark:hover {
+  background: #2b2d31;
+}
+
+.btn--ghost {
+  border-color: var(--color-ink);
+  color: var(--color-ink);
+}
+
+.btn--ghost:hover {
+  background: var(--color-ink);
+  color: var(--color-on-dark);
+}
+
+.btn--light {
+  background: var(--color-on-dark);
+  color: var(--color-ink);
+}
+
+.btn--light:hover {
+  background: #d9dadd;
+}
+
+.btn--ghost-light {
+  border-color: rgba(255, 255, 255, 0.7);
+  color: var(--color-on-dark);
+}
+
+.btn--ghost-light:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--color-on-dark);
+}
+
+/* Animación común para lo que aparece al bajar: sube 2rem y se aclara.
+   Cada componente la conecta al scroll con animation-timeline: view()
+   dentro de un @supports, así los navegadores que no lo soportan
+   muestran todo quieto y visible. */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    translate: 0 2rem;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+/* Quien prefiere menos movimiento no ve animaciones */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

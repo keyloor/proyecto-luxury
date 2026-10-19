@@ -1,0 +1,52 @@
+/* Franja de compra al final de la ficha: precio a la izquierda y botón a la
+   derecha. En pantallas angostas se apilan. */
+
+.purchase-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.75rem 2rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-dark);
+  color: var(--color-on-dark);
+}
+
+.purchase-card__label {
+  color: var(--color-on-dark-soft);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.purchase-card__price {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.purchase-card__description {
+  color: var(--color-on-dark-soft);
+  margin: 0;
+}
+
+.purchase-card__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  padding: 0.8rem 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 160ms ease;
+}
+
+.purchase-card__button--primary {
+  background: var(--color-on-dark);
+  color: var(--color-ink);
+}
+
+.purchase-card__button--primary:hover {
+  background: #d9dadd;
+}

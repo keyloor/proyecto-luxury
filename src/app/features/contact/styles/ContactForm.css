@@ -1,0 +1,77 @@
+/* Formulario de contacto: campos en dos columnas, el mensaje y el botón a lo
+   ancho. En pantallas angostas todo baja a una columna. */
+
+.contact-form {
+  display: grid;
+  align-content: start;
+  gap: 0.75rem;
+}
+
+.contact-form h1 {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+}
+
+.contact-form > p {
+  color: var(--color-ink-soft);
+}
+
+.contact-form form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.contact-form__field {
+  display: grid;
+  align-content: start;
+  gap: 0.4rem;
+}
+
+.contact-form__field--wide,
+.contact-form__submit {
+  grid-column: 1 / -1;
+}
+
+.contact-form label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  font: inherit;
+  color: var(--color-ink);
+  transition: border-color var(--duration) var(--ease);
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--color-ink);
+  outline: none;
+}
+
+.contact-form__error {
+  font-size: 0.8125rem;
+  color: #b3261e;
+}
+
+.contact-form__submit {
+  justify-self: start;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .contact-form form {
+    grid-template-columns: 1fr;
+  }
+}

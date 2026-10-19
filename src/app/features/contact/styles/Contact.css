@@ -1,0 +1,16 @@
+/* Página de contacto: el texto a la izquierda y el formulario a la derecha.
+   En pantallas angostas el formulario baja debajo del texto. */
+
+.contact-page {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: start;
+  gap: clamp(2rem, 6vw, 5rem);
+  padding-block: var(--section-space);
+}
+
+@media (max-width: 860px) {
+  .contact-page {
+    grid-template-columns: 1fr;
+  }
+}

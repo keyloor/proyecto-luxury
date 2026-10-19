@@ -1,0 +1,46 @@
+/* Página 404: un número enorme de fondo y el mensaje encima */
+
+.not-found {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 1rem;
+  min-height: 75vh;
+  padding: var(--section-space) var(--gutter);
+  overflow: hidden;
+  text-align: center;
+  /* Crea su propia capa, para que el 404 con z-index -1 quede detrás del texto pero dentro de la sección */
+  isolation: isolate;
+}
+
+.not-found__code {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  font-size: clamp(9rem, 32vw, 24rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: var(--color-surface-alt);
+  user-select: none;
+}
+
+.not-found__title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.not-found__text {
+  max-width: 34rem;
+  color: var(--color-ink-soft);
+}
+
+.not-found__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}

@@ -1,0 +1,230 @@
+[
+  {
+    "id": 1,
+    "name": "Aurora X7",
+    "location": "San José, Costa Rica",
+    "price": 32800,
+    "year": 2024,
+    "mileage": 12500,
+    "seats": 7,
+    "type": "SUV",
+    "image": "/images/suv.jpg",
+    "featured": true,
+    "description": "SUV versátil con espacio para siete pasajeros y equipamiento pensado para viajes largos.",
+    "features": [
+      "Cámara de reversa",
+      "Asientos de cuero",
+      "Control de crucero",
+      "Pantalla táctil"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Mistral S",
+    "location": "Heredia, Costa Rica",
+    "price": 24900,
+    "year": 2023,
+    "mileage": 18200,
+    "seats": 5,
+    "type": "Sedán",
+    "image": "/images/sedan.jpg",
+    "featured": true,
+    "description": "Sedán cómodo para la ciudad, con una conducción suave y una cabina espaciosa.",
+    "features": [
+      "Sensores de estacionamiento",
+      "Aire acondicionado",
+      "Conectividad Bluetooth",
+      "Control de estabilidad"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Vento GT",
+    "location": "Alajuela, Costa Rica",
+    "price": 47800,
+    "year": 2024,
+    "mileage": 7000,
+    "seats": 4,
+    "type": "Deportivo",
+    "image": "/images/deportivo.jpg",
+    "featured": true,
+    "description": "Diseño deportivo con detalles de alto contraste y respuesta ágil.",
+    "features": [
+      "Modos de manejo",
+      "Faros LED",
+      "Asientos deportivos",
+      "Cámara de reversa"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Lumen E",
+    "location": "Cartago, Costa Rica",
+    "price": 38600,
+    "year": 2025,
+    "mileage": 3900,
+    "seats": 5,
+    "type": "Eléctrico",
+    "image": "/images/electrico.jpg",
+    "featured": false,
+    "description": "Modelo eléctrico con interior moderno y conducción silenciosa.",
+    "features": [
+      "Carga rápida",
+      "Pantalla digital",
+      "Frenado regenerativo",
+      "Asistente de carril"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Terran Family",
+    "location": "San José, Costa Rica",
+    "price": 29500,
+    "year": 2022,
+    "mileage": 26800,
+    "seats": 7,
+    "type": "SUV",
+    "image": "/images/suv.jpg",
+    "featured": false,
+    "description": "SUV familiar con tercera fila y espacio de carga adaptable.",
+    "features": [
+      "Tercera fila",
+      "Climatizador",
+      "Control de estabilidad",
+      "Cámara de reversa"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Norte City",
+    "location": "Puntarenas, Costa Rica",
+    "price": 18900,
+    "year": 2023,
+    "mileage": 21500,
+    "seats": 5,
+    "type": "Sedán",
+    "image": "/images/sedan.jpg",
+    "featured": false,
+    "description": "Sedán compacto de fácil manejo para trayectos cotidianos.",
+    "features": [
+      "Pantalla táctil",
+      "Bluetooth",
+      "Sensores traseros",
+      "Aire acondicionado"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Sierra Cross",
+    "location": "Cartago, Costa Rica",
+    "price": 31900,
+    "year": 2024,
+    "mileage": 14600,
+    "seats": 5,
+    "type": "Crossover",
+    "image": "/images/suv.jpg",
+    "featured": false,
+    "description": "Crossover para recorridos urbanos y escapadas de fin de semana.",
+    "features": [
+      "Cámara de reversa",
+      "Control de crucero",
+      "Faros LED",
+      "Climatizador"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Brisa Hybrid",
+    "location": "Heredia, Costa Rica",
+    "price": 34200,
+    "year": 2025,
+    "mileage": 6200,
+    "seats": 5,
+    "type": "Híbrido",
+    "image": "/images/sedan.jpg",
+    "featured": false,
+    "description": "Sedán híbrido con una cabina cómoda y equipamiento para el uso diario.",
+    "features": [
+      "Sistema híbrido",
+      "Frenado regenerativo",
+      "Pantalla táctil",
+      "Sensores de estacionamiento"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Élite Sport",
+    "location": "San José, Costa Rica",
+    "price": 58900,
+    "year": 2024,
+    "mileage": 8500,
+    "seats": 2,
+    "type": "Deportivo",
+    "image": "/images/sport.jpg",
+    "featured": false,
+    "description": "Deportivo de dos plazas con una conducción ágil y acabados elegantes.",
+    "features": [
+      "Asientos deportivos",
+      "Modos de manejo",
+      "Faros LED",
+      "Control de estabilidad"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Nova Electric",
+    "location": "Alajuela, Costa Rica",
+    "price": 42900,
+    "year": 2025,
+    "mileage": 4100,
+    "seats": 5,
+    "type": "Eléctrico",
+    "image": "/images/electrico.jpg",
+    "featured": false,
+    "description": "Auto eléctrico de cinco plazas con tecnología práctica para cada viaje.",
+    "features": [
+      "Carga rápida",
+      "Cámara de reversa",
+      "Pantalla digital",
+      "Frenado regenerativo"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Pacífico Comfort",
+    "location": "Puntarenas, Costa Rica",
+    "price": 22700,
+    "year": 2022,
+    "mileage": 32400,
+    "seats": 5,
+    "type": "Sedán",
+    "image": "/images/sedan.jpg",
+    "featured": false,
+    "description": "Sedán de uso diario con amplio espacio interior y conducción confortable.",
+    "features": [
+      "Aire acondicionado",
+      "Bluetooth",
+      "Control de crucero",
+      "Sensores traseros"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Monte Verde",
+    "location": "Guanacaste, Costa Rica",
+    "price": 39800,
+    "year": 2023,
+    "mileage": 23700,
+    "seats": 7,
+    "type": "SUV",
+    "image": "/images/suv.jpg",
+    "featured": false,
+    "description": "SUV de siete pasajeros con espacio adaptable para la familia.",
+    "features": [
+      "Tercera fila",
+      "Climatizador",
+      "Cámara de reversa",
+      "Asientos abatibles"
+    ]
+  }
+]

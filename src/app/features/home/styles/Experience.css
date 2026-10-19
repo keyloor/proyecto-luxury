@@ -1,0 +1,109 @@
+/* Sección oscura con foto a la izquierda y texto a la derecha */
+
+.experience {
+  background: var(--color-dark);
+  color: var(--color-on-dark);
+  padding-block: var(--section-space);
+}
+
+.experience__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: clamp(2rem, 6vw, 5rem);
+}
+
+.experience__image {
+  min-height: clamp(18rem, 40vw, 34rem);
+  border-radius: var(--radius-lg);
+  background: url("/images/experiencia.jpg") center / cover no-repeat;
+}
+
+/* Al bajar: la foto se descubre de abajo hacia arriba como una cortina, el
+   texto sube, y los puntos de la lista entran uno tras otro.
+   (reveal-up está en index.css) */
+@supports (animation-timeline: view()) {
+  .experience__image {
+    animation: curtain linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 45%;
+  }
+
+  /* la lista no, porque sus puntos se animan por separado */
+  .experience__content > :not(.check-list) {
+    animation: reveal-up linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 80%;
+  }
+
+  .check-list li {
+    animation: reveal-up linear both;
+    animation-timeline: view();
+  }
+
+  .check-list li:nth-child(1) { animation-range: entry 0% entry 70%; }
+  .check-list li:nth-child(2) { animation-range: entry 15% entry 85%; }
+  .check-list li:nth-child(3) { animation-range: entry 30% entry 100%; }
+
+  @keyframes curtain {
+    from {
+      clip-path: inset(100% 0 0 0 round var(--radius-lg));
+      scale: 1.06;
+    }
+    to {
+      clip-path: inset(0 0 0 0 round var(--radius-lg));
+      scale: 1;
+    }
+  }
+}
+
+.experience__content {
+  display: grid;
+  gap: 1.25rem;
+  justify-items: start;
+}
+
+.experience .eyebrow {
+  color: var(--color-on-dark-soft);
+}
+
+.experience h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.experience__content > p:not(.eyebrow) {
+  color: rgba(247, 247, 248, 0.8);
+}
+
+/* Lista con marcas de verificación en lugar de viñetas */
+.check-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0.5rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.check-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.check-list li::before {
+  content: "✓";
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  font-size: 0.75rem;
+}
+
+@media (max-width: 860px) {
+  .experience__grid {
+    grid-template-columns: 1fr;
+  }
+}

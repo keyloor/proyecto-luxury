@@ -1,0 +1,120 @@
+/* Portada: foto a pantalla completa, oscurecida abajo y a la izquierda (donde
+   va el texto) para que el blanco se lea sobre cualquier parte de la foto.
+   Al cargar, la foto se aleja despacio y el texto entra en escalera. */
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  /* alto de la pantalla menos la barra de navegación, entre 34rem y 60rem */
+  min-height: clamp(34rem, calc(100svh - 4.5rem), 60rem);
+  padding-block: clamp(3rem, 8vw, 6rem);
+  overflow: hidden;
+  isolation: isolate;
+  color: var(--color-on-dark);
+  background: var(--color-dark);
+}
+
+/* La foto va en una capa aparte para poder animarla sin mover el texto */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(10, 11, 13, 0.8) 0%, rgba(10, 11, 13, 0.2) 55%, rgba(10, 11, 13, 0) 75%),
+    linear-gradient(180deg, rgba(10, 11, 13, 0.35) 0%, rgba(10, 11, 13, 0) 25%, rgba(10, 11, 13, 0.9) 100%),
+    url("/images/hero.jpg") 65% center / cover no-repeat;
+  animation: hero-zoom 2.4s var(--ease) both;
+}
+
+.hero__content {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.hero__content > * {
+  animation: fade-up 0.9s var(--ease) both;
+}
+
+.hero__content > :nth-child(2) { animation-delay: 0.12s; }
+.hero__content > :nth-child(3) { animation-delay: 0.24s; }
+.hero__content > :nth-child(4) { animation-delay: 0.36s; }
+
+.hero .eyebrow {
+  color: var(--color-on-dark-soft);
+}
+
+.hero__title {
+  max-width: 13ch;
+  font-size: clamp(2.75rem, 7.5vw, 6rem);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+
+.hero__text {
+  max-width: 34rem;
+  font-size: var(--text-lg);
+  color: rgba(247, 247, 248, 0.82);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+/* Paralaje al bajar: durante la primera pantalla de scroll la foto baja más
+   lento que la página y el texto sube y se desvanece. scroll(root) mide el
+   desplazamiento de la página completa. */
+@supports (animation-timeline: scroll()) {
+  .hero::before {
+    /* el shorthand animation reinicia animation-timeline, por eso va primero */
+    animation:
+      hero-zoom 2.4s var(--ease) both,
+      hero-parallax linear both;
+    animation-timeline: auto, scroll(root);
+    animation-range: normal, 0 100vh;
+  }
+
+  .hero__content {
+    animation: hero-content-out linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 70vh;
+  }
+}
+
+@keyframes hero-parallax {
+  to {
+    translate: 0 25%;
+  }
+}
+
+@keyframes hero-content-out {
+  to {
+    opacity: 0;
+    translate: 0 -3rem;
+  }
+}
+
+@keyframes hero-zoom {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

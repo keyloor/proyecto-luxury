@@ -1,0 +1,19 @@
+/* Catálogo: título grande y la rejilla de tarjetas debajo (la rejilla está en
+   CardCarList.css). */
+
+.cars-page {
+  padding-block: var(--section-space);
+}
+
+.cars-page h1 {
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+}
+
+.cars-page__empty {
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-alt);
+  color: var(--color-ink-soft);
+}

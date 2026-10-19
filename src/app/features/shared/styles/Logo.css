@@ -1,0 +1,30 @@
+/* Logo: la K en letra ancha y gruesa de emblema (Syncopate Bold) dentro de un cuadro,
+   y la palabra MOTORS espaciada en la letra normal */
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.logo__mark {
+  display: grid;
+  place-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-ink);
+  color: var(--color-on-dark);
+  font-family: var(--font-display);
+  font-weight: 700;
+  /* Syncopate es baja y ancha: va más grande para llenar el cuadro */
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.logo__word small {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}

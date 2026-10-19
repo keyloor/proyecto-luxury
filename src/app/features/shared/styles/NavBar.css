@@ -1,0 +1,82 @@
+/* Barra de navegación fija arriba, blanca y casi transparente */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 4.5rem;
+}
+
+.navbar__brand {
+  text-decoration: none;
+}
+
+.navbar__links {
+  display: flex;
+  gap: clamp(1rem, 3vw, 2.5rem);
+}
+
+.navbar__links a {
+  position: relative;
+  padding-block: 0.5rem;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-ink-soft);
+  text-decoration: none;
+  transition: color var(--duration) var(--ease);
+}
+
+.navbar__links a:hover,
+.navbar__links a.active {
+  color: var(--color-ink);
+}
+
+/* Línea bajo la sección activa */
+.navbar__links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--color-ink);
+  transform: scaleX(0);
+  transition: transform var(--duration) var(--ease);
+}
+
+.navbar__links a.active::after {
+  transform: scaleX(1);
+}
+
+/* Al empezar a bajar, la barra gana una sombra suave que la separa del contenido */
+@supports (animation-timeline: scroll()) {
+  .navbar {
+    animation: navbar-shadow linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 120px;
+  }
+
+  @keyframes navbar-shadow {
+    to {
+      box-shadow: 0 0.5rem 2rem -1rem rgba(10, 11, 13, 0.25);
+      border-bottom-color: transparent;
+    }
+  }
+}
+
+/* En teléfonos se esconde la palabra del logo para que quepan los enlaces */
+@media (max-width: 420px) {
+  .navbar .logo__word {
+    display: none;
+  }
+}

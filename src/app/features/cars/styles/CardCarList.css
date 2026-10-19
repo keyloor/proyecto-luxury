@@ -1,0 +1,10 @@
+/* Rejilla de tarjetas: tantas columnas como quepan, de al menos 280px.
+   auto-fit (y no auto-fill) estira las tarjetas cuando son pocas, para que
+   no quede una columna vacía a la derecha. */
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: clamp(1rem, 2.5vw, 2rem);
+  margin-top: 2rem;
+}
