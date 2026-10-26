@@ -1,0 +1,9 @@
+.apartments-title {
+  margin-top: 0;
+}
+
+.apartments-message {
+  padding: 32px 0;
+  text-align: center;
+  color: var(--color-muted);
+}
