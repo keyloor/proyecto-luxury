@@ -1,9 +1,7 @@
+import Hero from '../components/Hero'
+
 const Home = () => {
-  return (
-    <section className="container page-section">
-      <h1>Inicio</h1>
-    </section>
-  )
+  return <Hero />
 }
 
 export default Home
