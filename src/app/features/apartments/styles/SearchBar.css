@@ -1,0 +1,21 @@
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-grow: 1;
+}
+
+.search-bar label {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+.search-bar input {
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
