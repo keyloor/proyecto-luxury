@@ -1,0 +1,72 @@
+.apartment-detail-back {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: var(--color-muted);
+  text-decoration: none;
+}
+
+.apartment-detail {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .apartment-detail {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+.apartment-detail-image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+.apartment-detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.apartment-detail-location {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.apartment-detail-name {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.apartment-detail-price {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.apartment-detail-price span {
+  font-size: 1rem;
+  font-weight: normal;
+  color: var(--color-muted);
+}
+
+.apartment-detail-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 0;
+  padding: 16px 0;
+  list-style: none;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.apartment-detail-description {
+  margin: 0;
+}
+
+.apartment-detail-message {
+  padding: 32px 0 16px;
+  color: var(--color-muted);
+}
