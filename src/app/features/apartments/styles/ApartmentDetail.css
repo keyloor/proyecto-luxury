@@ -70,3 +70,33 @@
   padding: 32px 0 16px;
   color: var(--color-muted);
 }
+
+.apartment-detail-amenities h2 {
+  margin: 0 0 12px;
+  font-size: 1.25rem;
+}
+
+.apartment-detail-amenities ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.apartment-detail-amenities li {
+  padding: 6px 12px;
+  border-radius: var(--radius);
+  background-color: var(--color-surface);
+  font-size: 0.875rem;
+}
+
+.apartment-detail-contact {
+  align-self: flex-start;
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  text-decoration: none;
+}

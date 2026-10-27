@@ -70,6 +70,22 @@ const ApartmentDetail = () => {
           </ul>
 
           <p className="apartment-detail-description">{apartment.description}</p>
+
+          <div className="apartment-detail-amenities">
+            <h2>Amenidades</h2>
+            <ul>
+              {apartment.amenities.map((amenity) => (
+                <li key={amenity}>{amenity}</li>
+              ))}
+            </ul>
+          </div>
+
+          <Link
+            className="apartment-detail-contact"
+            to={`/contacto?propiedad=${encodeURIComponent(apartment.name)}`}
+          >
+            Consultar por este apartamento
+          </Link>
         </div>
       </div>
     </section>
