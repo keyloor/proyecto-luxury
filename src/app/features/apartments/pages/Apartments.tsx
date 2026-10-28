@@ -39,7 +39,7 @@ const Apartments = () => {
   if (isLoading) {
     return (
       <section className="container page-section">
-        <p className="apartments-message">Cargando apartamentos...</p>
+        <p className="page-message">Cargando apartamentos...</p>
       </section>
     )
   }
@@ -47,7 +47,7 @@ const Apartments = () => {
   if (error) {
     return (
       <section className="container page-section">
-        <p className="apartments-message">No se pudieron cargar los apartamentos: {error}</p>
+        <p className="page-message">No se pudieron cargar los apartamentos: {error}</p>
       </section>
     )
   }
@@ -55,7 +55,7 @@ const Apartments = () => {
   if (!data || data.length === 0) {
     return (
       <section className="container page-section">
-        <p className="apartments-message">No hay apartamentos disponibles.</p>
+        <p className="page-message">No hay apartamentos disponibles.</p>
       </section>
     )
   }
@@ -88,9 +88,13 @@ const Apartments = () => {
 
   return (
     <section className="container page-section">
-      <h1 className="apartments-title">Apartamentos</h1>
+      <header className="page-heading">
+        <p className="eyebrow">Colección Noir</p>
+        <h1 className="page-title">Un espacio que va contigo.</h1>
+        <p className="page-intro">Ciudad o playa. Explora las residencias y encuentra tu próximo hogar.</p>
+      </header>
 
-      <div className="apartments-toolbar">
+      <div className="apartments-toolbar panel">
         <SearchBar search={filters.search} onSearchChange={handleSearchChange} />
         <ApartmentFilters
           locations={locations}
@@ -102,8 +106,12 @@ const Apartments = () => {
         />
       </div>
 
+      <p className="page-intro" role="status">
+        {filteredApartments.length} {filteredApartments.length === 1 ? 'residencia disponible' : 'residencias disponibles'}
+      </p>
+
       {filteredApartments.length === 0 ? (
-        <p className="apartments-message">
+        <p className="page-message">
           No hay apartamentos que coincidan con la búsqueda.
         </p>
       ) : (

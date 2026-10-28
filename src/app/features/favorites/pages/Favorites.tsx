@@ -12,7 +12,7 @@ const Favorites = () => {
   if (isLoading) {
     return (
       <section className="container page-section">
-        <p className="favorites-message">Cargando favoritos...</p>
+        <p className="page-message">Cargando favoritos...</p>
       </section>
     )
   }
@@ -20,7 +20,7 @@ const Favorites = () => {
   if (error) {
     return (
       <section className="container page-section">
-        <p className="favorites-message">No se pudieron cargar los favoritos: {error}</p>
+        <p className="page-message">No se pudieron cargar los favoritos: {error}</p>
       </section>
     )
   }
@@ -31,21 +31,25 @@ const Favorites = () => {
 
   return (
     <section className="container page-section">
-      <h1 className="favorites-title">Favoritos</h1>
+      <header className="page-heading">
+        <p className="eyebrow">Tu selección</p>
+        <h1 className="page-title">Espacios para volver.</h1>
+        <p className="page-intro">Guarda tus favoritos desde el detalle y compáralos aquí con calma.</p>
+      </header>
 
       {favoriteApartments.length === 0 ? (
         <div className="favorites-empty">
-          <p className="favorites-message">Todavía no guardaste ningún apartamento.</p>
-          <Link className="favorites-link" to="/apartamentos">
+          <p className="page-message">Aún no tienes apartamentos guardados.</p>
+          <Link className="button button--light" to="/apartamentos">
             Ver apartamentos
           </Link>
         </div>
       ) : (
         <>
-          <p className="favorites-count">
+          <p className="page-intro">
             {favoriteApartments.length === 1
-              ? 'Tenés 1 apartamento guardado.'
-              : `Tenés ${favoriteApartments.length} apartamentos guardados.`}
+              ? 'Tienes 1 apartamento guardado.'
+              : `Tienes ${favoriteApartments.length} apartamentos guardados.`}
           </p>
           <ApartmentCardList apartments={favoriteApartments} />
         </>

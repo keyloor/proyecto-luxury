@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import type { Apartment } from '../types/Apartment'
-import FavoriteButton from '../../favorites/components/FavoriteButton'
 import '../styles/ApartmentCard.css'
 
 interface ApartmentCardProps {
@@ -9,20 +8,22 @@ interface ApartmentCardProps {
 
 const ApartmentCard = ({ apartment }: ApartmentCardProps) => {
   return (
-    <article className="apartment-card">
+    <article className="apartment-card panel">
       <img
         className="apartment-card-image"
         src={apartment.image}
         alt={`Foto de ${apartment.name}`}
+        width={1200}
+        height={900}
       />
 
       <div className="apartment-card-body">
-        <p className="apartment-card-location">{apartment.location}</p>
+        <p className="eyebrow">{apartment.location}</p>
         <h2 className="apartment-card-name">{apartment.name}</h2>
 
         <ul className="apartment-card-features">
           <li>{apartment.bedrooms} hab.</li>
-          <li>{apartment.bathrooms} baños</li>
+          <li>{apartment.bathrooms} {apartment.bathrooms === 1 ? 'baño' : 'baños'}</li>
           <li>{apartment.area} m²</li>
         </ul>
 
@@ -30,12 +31,9 @@ const ApartmentCard = ({ apartment }: ApartmentCardProps) => {
           ${apartment.price.toLocaleString('es-CR')} <span>/ mes</span>
         </p>
 
-        <div className="apartment-card-actions">
-          <Link className="apartment-card-link" to={`/apartamentos/${apartment.id}`}>
-            Ver detalle
-          </Link>
-          <FavoriteButton id={apartment.id} />
-        </div>
+        <Link className="button button--glass glass apartment-card-link" to={`/apartamentos/${apartment.id}`}>
+          Ver apartamento <span aria-hidden="true">↗</span>
+        </Link>
       </div>
     </article>
   )

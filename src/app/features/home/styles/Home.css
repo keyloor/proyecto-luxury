@@ -24,16 +24,11 @@
   font-weight: 300;
 }
 
-.home-stat__label,
-.home-eyebrow {
+.home-stat__label {
   font-size: 0.8rem;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--color-muted);
-}
-
-.home-eyebrow {
-  margin: 0 0 8px;
 }
 
 .home-featured {

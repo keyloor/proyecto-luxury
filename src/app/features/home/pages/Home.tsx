@@ -34,7 +34,7 @@ const Home = () => {
       <section id="destacados" className="container home-featured">
         <div className="home-featured__header">
           <div>
-            <p className="home-eyebrow">Selección Noir</p>
+            <p className="eyebrow">Selección Noir</p>
             <h2 className="home-featured__title">Apartamentos destacados</h2>
           </div>
           <Link to="/apartamentos" className="button button--glass glass">
@@ -49,8 +49,8 @@ const Home = () => {
 
       <section className="container">
         <div className="home-cta">
-          <h2 className="home-cta__title">¿Querés conocerlo en persona?</h2>
-          <p className="home-cta__text">Agendá una visita privada, sin compromiso.</p>
+          <h2 className="home-cta__title">¿Quieres conocerlo en persona?</h2>
+          <p className="home-cta__text">Agenda una visita privada, sin compromiso.</p>
           <Link to="/contacto" className="button button--light">
             Agendar visita
           </Link>
