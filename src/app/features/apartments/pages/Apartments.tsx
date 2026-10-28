@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useFetch } from '../../shared/hooks/useFetch'
 import type { Apartment } from '../types/Apartment'
+import type { ApartmentFiltersState } from '../types/ApartmentFiltersState'
 import ApartmentCardList from '../components/ApartmentCardList'
 import SearchBar from '../components/SearchBar'
 import ApartmentFilters from '../components/ApartmentFilters'
@@ -9,25 +10,29 @@ import '../styles/Apartments.css'
 
 const ITEMS_PER_PAGE = 5
 
+const initialFilters: ApartmentFiltersState = {
+  search: '',
+  location: '',
+  bedrooms: '',
+}
+
 const Apartments = () => {
   const { data, isLoading, error } = useFetch<Apartment[]>('/data/apartments.json')
-  const [search, setSearch] = useState('')
-  const [selectedLocation, setSelectedLocation] = useState('')
-  const [selectedBedrooms, setSelectedBedrooms] = useState('')
+  const [filters, setFilters] = useState<ApartmentFiltersState>(initialFilters)
   const [currentPage, setCurrentPage] = useState(1)
 
   const handleSearchChange = (value: string) => {
-    setSearch(value)
+    setFilters({ ...filters, search: value })
     setCurrentPage(1)
   }
 
   const handleLocationChange = (value: string) => {
-    setSelectedLocation(value)
+    setFilters({ ...filters, location: value })
     setCurrentPage(1)
   }
 
   const handleBedroomsChange = (value: string) => {
-    setSelectedBedrooms(value)
+    setFilters({ ...filters, bedrooms: value })
     setCurrentPage(1)
   }
 
@@ -64,15 +69,15 @@ const Apartments = () => {
     .filter((bedrooms, index, list) => list.indexOf(bedrooms) === index)
     .sort((a, b) => a - b)
 
-  const text = search.toLowerCase()
+  const text = filters.search.toLowerCase()
 
   const filteredApartments = data.filter((apartment) => {
     const matchesSearch =
       apartment.name.toLowerCase().includes(text) ||
       apartment.location.toLowerCase().includes(text)
-    const matchesLocation = selectedLocation === '' || apartment.location === selectedLocation
+    const matchesLocation = filters.location === '' || apartment.location === filters.location
     const matchesBedrooms =
-      selectedBedrooms === '' || apartment.bedrooms === Number(selectedBedrooms)
+      filters.bedrooms === '' || apartment.bedrooms === Number(filters.bedrooms)
 
     return matchesSearch && matchesLocation && matchesBedrooms
   })
@@ -86,12 +91,12 @@ const Apartments = () => {
       <h1 className="apartments-title">Apartamentos</h1>
 
       <div className="apartments-toolbar">
-        <SearchBar search={search} onSearchChange={handleSearchChange} />
+        <SearchBar search={filters.search} onSearchChange={handleSearchChange} />
         <ApartmentFilters
           locations={locations}
           bedroomOptions={bedroomOptions}
-          selectedLocation={selectedLocation}
-          selectedBedrooms={selectedBedrooms}
+          selectedLocation={filters.location}
+          selectedBedrooms={filters.bedrooms}
           onLocationChange={handleLocationChange}
           onBedroomsChange={handleBedroomsChange}
         />

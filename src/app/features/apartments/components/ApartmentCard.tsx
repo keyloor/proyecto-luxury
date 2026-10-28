@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import type { Apartment } from '../types/Apartment'
+import FavoriteButton from '../../favorites/components/FavoriteButton'
 import '../styles/ApartmentCard.css'
 
 interface ApartmentCardProps {
@@ -29,9 +30,12 @@ const ApartmentCard = ({ apartment }: ApartmentCardProps) => {
           ${apartment.price.toLocaleString('es-CR')} <span>/ mes</span>
         </p>
 
-        <Link className="apartment-card-link" to={`/apartamentos/${apartment.id}`}>
-          Ver detalle
-        </Link>
+        <div className="apartment-card-actions">
+          <Link className="apartment-card-link" to={`/apartamentos/${apartment.id}`}>
+            Ver detalle
+          </Link>
+          <FavoriteButton id={apartment.id} />
+        </div>
       </div>
     </article>
   )
