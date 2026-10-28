@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useFetch } from '../../shared/hooks/useFetch'
 import type { Apartment } from '../types/Apartment'
 import FavoriteButton from '../../favorites/components/FavoriteButton'
+import ApartmentMap from '../components/ApartmentMap'
 import '../styles/ApartmentDetail.css'
 
 const ApartmentDetail = () => {
@@ -94,6 +95,7 @@ const ApartmentDetail = () => {
           </div>
         </div>
       </div>
+      <ApartmentMap location={apartment.location} />
     </section>
   )
 }
