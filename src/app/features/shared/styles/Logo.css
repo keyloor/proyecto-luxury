@@ -1,5 +1,23 @@
 .logo {
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo__small,
+.logo__name {
+  text-transform: uppercase;
+}
+
+.logo__small {
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 4px;
+  color: var(--color-muted);
+}
+
+.logo__name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 6px;
 }
