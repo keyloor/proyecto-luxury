@@ -7,7 +7,7 @@ interface SearchBarProps {
 
 const SearchBar = ({ search, onSearchChange }: SearchBarProps) => {
   return (
-    <div className="search-bar">
+    <div className="search-bar field">
       <label htmlFor="search">Buscar</label>
       <input
         id="search"

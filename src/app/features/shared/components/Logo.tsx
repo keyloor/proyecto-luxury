@@ -2,10 +2,13 @@ import '../styles/Logo.css'
 
 const Logo = () => {
   return (
-    <span className="logo">
-      <span className="logo__small">Apartamentos</span>
-      <span className="logo__name">Noir</span>
-    </span>
+    <img
+      className="logo"
+      src="/images/noir-logo.svg"
+      alt="Apartamentos Noir"
+      width={32}
+      height={32}
+    />
   )
 }
 

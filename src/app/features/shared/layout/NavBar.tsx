@@ -22,7 +22,7 @@ const NavBar = () => {
 
           <button
             type="button"
-            className="navbar__toggle"
+            className="button button--glass glass navbar__toggle"
             aria-expanded={isOpen}
             aria-controls="menu-principal"
             onClick={() => setIsOpen(!isOpen)}

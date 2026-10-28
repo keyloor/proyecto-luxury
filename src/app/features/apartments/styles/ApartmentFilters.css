@@ -1,26 +1,11 @@
 .apartment-filters {
   display: flex;
+  flex: 2;
   flex-wrap: wrap;
   gap: 16px;
 }
 
 .apartment-filter {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.apartment-filter label {
-  font-size: 0.875rem;
-  color: var(--color-muted);
-}
-
-.apartment-filter select {
-  padding: 10px 12px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  font-family: var(--font-body);
-  font-size: 1rem;
-  color: var(--color-text);
-  background-color: var(--color-bg);
+  flex: 1;
+  min-width: 140px;
 }

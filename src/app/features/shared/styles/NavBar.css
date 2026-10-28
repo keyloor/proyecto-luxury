@@ -12,6 +12,10 @@
 }
 
 .navbar__brand {
+  display: inline-flex;
+  align-items: center;
+  min-width: 44px;
+  min-height: 44px;
   text-decoration: none;
 }
 
@@ -46,14 +50,6 @@
 
 .navbar__toggle {
   display: none;
-  padding: 8px 18px;
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-pill);
-  background: none;
-  font-family: inherit;
-  font-size: 0.85rem;
-  color: inherit;
-  cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -63,12 +59,13 @@
 
   .navbar__inner {
     flex-wrap: wrap;
+    gap: 12px;
     padding: 10px 12px 10px 22px;
     border-radius: 28px;
   }
 
   .navbar__toggle {
-    display: block;
+    display: inline-flex;
   }
 
   .navbar__phone,
@@ -86,22 +83,33 @@
   .navbar__links a {
     padding: 10px 0;
     font-size: 1rem;
+    color: var(--color-text);
   }
 
   .navbar__links a.active {
     border-bottom: none;
+    font-weight: 600;
   }
 
   .navbar__inner--open {
-    background-color: rgba(18, 18, 18, 0.3);
-    backdrop-filter: blur(28px);
+    overflow: hidden;
+    animation: navbar-open 320ms ease-out;
   }
 
   .navbar__inner--open .navbar__links {
     display: flex;
+    animation: fade-in 320ms ease-out;
   }
+}
 
-  .navbar__inner--open .navbar__links a {
-    color: var(--color-text);
+@keyframes navbar-open {
+  from { max-height: 68px; }
+  to { max-height: 340px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar__inner--open,
+  .navbar__inner--open .navbar__links {
+    animation: none;
   }
 }

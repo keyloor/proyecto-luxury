@@ -19,7 +19,7 @@ const ApartmentFilters = ({
 }: ApartmentFiltersProps) => {
   return (
     <div className="apartment-filters">
-      <div className="apartment-filter">
+      <div className="apartment-filter field">
         <label htmlFor="location">Ubicación</label>
         <select
           id="location"
@@ -35,7 +35,7 @@ const ApartmentFilters = ({
         </select>
       </div>
 
-      <div className="apartment-filter">
+      <div className="apartment-filter field">
         <label htmlFor="bedrooms">Habitaciones</label>
         <select
           id="bedrooms"

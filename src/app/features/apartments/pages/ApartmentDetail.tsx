@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom'
 import { useFetch } from '../../shared/hooks/useFetch'
 import type { Apartment } from '../types/Apartment'
+import FavoriteButton from '../../favorites/components/FavoriteButton'
 import '../styles/ApartmentDetail.css'
 
 const ApartmentDetail = () => {
@@ -10,7 +11,7 @@ const ApartmentDetail = () => {
   if (isLoading) {
     return (
       <section className="container page-section">
-        <p className="apartment-detail-message">Cargando apartamento...</p>
+        <p className="page-message">Cargando apartamento...</p>
       </section>
     )
   }
@@ -18,7 +19,7 @@ const ApartmentDetail = () => {
   if (error) {
     return (
       <section className="container page-section">
-        <p className="apartment-detail-message">No se pudo cargar el apartamento: {error}</p>
+        <p className="page-message">No se pudo cargar el apartamento: {error}</p>
       </section>
     )
   }
@@ -28,7 +29,7 @@ const ApartmentDetail = () => {
   if (!apartment) {
     return (
       <section className="container page-section">
-        <p className="apartment-detail-message">No encontramos este apartamento.</p>
+        <p className="page-message">No encontramos este apartamento.</p>
         <Link className="apartment-detail-back" to="/apartamentos">
           ← Volver al catálogo
         </Link>
@@ -47,11 +48,13 @@ const ApartmentDetail = () => {
           className="apartment-detail-image"
           src={apartment.image}
           alt={`Foto de ${apartment.name}`}
+          width={1200}
+          height={900}
         />
 
-        <div className="apartment-detail-info">
-          <p className="apartment-detail-location">{apartment.location}</p>
-          <h1 className="apartment-detail-name">{apartment.name}</h1>
+        <div className="apartment-detail-info panel">
+          <p className="eyebrow">{apartment.location}</p>
+          <h1 className="page-title">{apartment.name}</h1>
 
           <p className="apartment-detail-price">
             ${apartment.price.toLocaleString('es-CR')} <span>/ mes</span>
@@ -59,13 +62,13 @@ const ApartmentDetail = () => {
 
           <ul className="apartment-detail-features">
             <li>
-              <strong>{apartment.bedrooms}</strong> habitaciones
+              <strong>{apartment.bedrooms}</strong> <span>{apartment.bedrooms === 1 ? 'habitación' : 'habitaciones'}</span>
             </li>
             <li>
-              <strong>{apartment.bathrooms}</strong> baños
+              <strong>{apartment.bathrooms}</strong> <span>{apartment.bathrooms === 1 ? 'baño' : 'baños'}</span>
             </li>
             <li>
-              <strong>{apartment.area}</strong> m²
+              <strong>{apartment.area}</strong> <span>m²</span>
             </li>
           </ul>
 
@@ -75,17 +78,20 @@ const ApartmentDetail = () => {
             <h2>Amenidades</h2>
             <ul>
               {apartment.amenities.map((amenity) => (
-                <li key={amenity}>{amenity}</li>
+                <li key={amenity} className="tag glass">{amenity}</li>
               ))}
             </ul>
           </div>
 
-          <Link
-            className="apartment-detail-contact"
-            to={`/contacto?propiedad=${encodeURIComponent(apartment.name)}`}
-          >
-            Consultar por este apartamento
-          </Link>
+          <div className="apartment-detail-actions">
+            <Link
+              className="button button--light"
+              to={`/contacto?propiedad=${encodeURIComponent(apartment.name)}`}
+            >
+              Solicitar una visita
+            </Link>
+            <FavoriteButton id={apartment.id} />
+          </div>
         </div>
       </div>
     </section>

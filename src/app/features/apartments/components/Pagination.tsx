@@ -12,7 +12,7 @@ const Pagination = ({ currentPage, totalPages, onPrevious, onNext }: PaginationP
     <nav className="pagination" aria-label="Paginación">
       <button
         type="button"
-        className="pagination-button"
+        className="button button--glass glass"
         onClick={onPrevious}
         disabled={currentPage === 1}
       >
@@ -25,7 +25,7 @@ const Pagination = ({ currentPage, totalPages, onPrevious, onNext }: PaginationP
 
       <button
         type="button"
-        className="pagination-button"
+        className="button button--glass glass"
         onClick={onNext}
         disabled={currentPage === totalPages}
       >

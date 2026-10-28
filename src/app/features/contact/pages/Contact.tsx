@@ -14,13 +14,13 @@ const validate = (form: ContactFormData) => {
   const errors: ContactFormErrors = {}
 
   if (form.name.trim() === '') {
-    errors.name = 'Escribí tu nombre.'
+    errors.name = 'Escribe tu nombre.'
   } else if (form.name.trim().length < 3) {
     errors.name = 'El nombre debe tener al menos 3 letras.'
   }
 
   if (form.email.trim() === '') {
-    errors.email = 'Escribí tu correo.'
+    errors.email = 'Escribe tu correo.'
   } else if (!EMAIL_PATTERN.test(form.email.trim())) {
     errors.email = 'El correo no es válido. Ejemplo: nombre@correo.com'
   }
@@ -30,11 +30,11 @@ const validate = (form: ContactFormData) => {
   }
 
   if (form.property === '') {
-    errors.property = 'Elegí una propiedad o «Consulta general».'
+    errors.property = 'Elige una propiedad o «Consulta general».'
   }
 
   if (form.message.trim() === '') {
-    errors.message = 'Escribí tu mensaje.'
+    errors.message = 'Escribe tu mensaje.'
   } else if (form.message.trim().length < 10) {
     errors.message = 'El mensaje debe tener al menos 10 caracteres.'
   } else if (form.message.length > 500) {
@@ -66,6 +66,7 @@ const Contact = () => {
     const { name, value } = event.target
     setForm({ ...form, [name]: value })
     setErrors({ ...errors, [name]: undefined })
+    setSentName('')
   }
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -91,23 +92,24 @@ const Contact = () => {
 
   return (
     <section className="container page-section contact">
-      <h1 className="contact-title">Contacto</h1>
-      <p className="contact-intro">
-        ¿Te interesa un apartamento? Dejanos tus datos y te escribimos para coordinar una visita.
-      </p>
-
-      <p className="contact-notice">
-        Este formulario es una simulación: los datos no se envían a ningún lado.
-      </p>
-
-      {sentName !== '' && (
-        <p className="contact-success" role="status">
-          ¡Gracias, {sentName}! Recibimos tu mensaje (envío simulado).
+      <div className="contact-intro">
+        <p className="eyebrow">Contacto Noir</p>
+        <h1 className="page-title">Hablemos de tu próximo hogar.</h1>
+        <p className="page-intro">
+          Elige una residencia y cuéntanos qué tienes en mente. Cada búsqueda empieza con una conversación.
         </p>
-      )}
+        <ul className="contact-tags">
+          <li className="tag glass">Ciudad y playa</li>
+          <li className="tag glass">Visitas privadas</li>
+        </ul>
+        <p className="contact-notice glass">
+          <strong>Formulario de demostración.</strong> El envío es simulado: tus datos no se envían ni se guardan.
+        </p>
+      </div>
 
-      <form className="contact-form" onSubmit={handleSubmit} noValidate>
-        <div className="contact-field">
+      <form className="contact-form panel" onSubmit={handleSubmit} noValidate>
+        <h2>Cuéntanos qué buscas</h2>
+        <div className="field">
           <label htmlFor="name">Nombre</label>
           <input
             id="name"
@@ -116,16 +118,16 @@ const Contact = () => {
             value={form.name}
             onChange={handleChange}
             aria-invalid={errors.name ? true : false}
-            aria-describedby="name-error"
+            aria-describedby={errors.name ? 'name-error' : undefined}
           />
           {errors.name && (
-            <p id="name-error" className="contact-error">
+            <p id="name-error" className="field-error">
               {errors.name}
             </p>
           )}
         </div>
 
-        <div className="contact-field">
+        <div className="field">
           <label htmlFor="email">Correo</label>
           <input
             id="email"
@@ -134,18 +136,18 @@ const Contact = () => {
             value={form.email}
             onChange={handleChange}
             aria-invalid={errors.email ? true : false}
-            aria-describedby="email-error"
+            aria-describedby={errors.email ? 'email-error' : undefined}
           />
           {errors.email && (
-            <p id="email-error" className="contact-error">
+            <p id="email-error" className="field-error">
               {errors.email}
             </p>
           )}
         </div>
 
-        <div className="contact-field">
+        <div className="field">
           <label htmlFor="phone">
-            Teléfono <span className="contact-optional">(opcional)</span>
+            Teléfono (opcional)
           </label>
           <input
             id="phone"
@@ -154,16 +156,16 @@ const Contact = () => {
             value={form.phone}
             onChange={handleChange}
             aria-invalid={errors.phone ? true : false}
-            aria-describedby="phone-error"
+            aria-describedby={errors.phone ? 'phone-error' : undefined}
           />
           {errors.phone && (
-            <p id="phone-error" className="contact-error">
+            <p id="phone-error" className="field-error">
               {errors.phone}
             </p>
           )}
         </div>
 
-        <div className="contact-field">
+        <div className="field">
           <label htmlFor="property">Propiedad</label>
           <select
             id="property"
@@ -171,9 +173,9 @@ const Contact = () => {
             value={form.property}
             onChange={handleChange}
             aria-invalid={errors.property ? true : false}
-            aria-describedby="property-error"
+            aria-describedby={errors.property ? 'property-error' : undefined}
           >
-            <option value="">Elegí una opción</option>
+            <option value="">Elige una opción</option>
             <option value={GENERAL_QUERY}>{GENERAL_QUERY}</option>
             {propertyNames.map((propertyName) => (
               <option key={propertyName} value={propertyName}>
@@ -182,13 +184,13 @@ const Contact = () => {
             ))}
           </select>
           {errors.property && (
-            <p id="property-error" className="contact-error">
+            <p id="property-error" className="field-error">
               {errors.property}
             </p>
           )}
         </div>
 
-        <div className="contact-field">
+        <div className="field contact-message">
           <label htmlFor="message">Mensaje</label>
           <textarea
             id="message"
@@ -197,17 +199,23 @@ const Contact = () => {
             value={form.message}
             onChange={handleChange}
             aria-invalid={errors.message ? true : false}
-            aria-describedby="message-error"
+            aria-describedby={errors.message ? 'message-counter message-error' : 'message-counter'}
           />
-          <p className="contact-counter">{form.message.length} / 500</p>
+          <p id="message-counter" className="contact-counter">{form.message.length} / 500</p>
           {errors.message && (
-            <p id="message-error" className="contact-error">
+            <p id="message-error" className="field-error">
               {errors.message}
             </p>
           )}
         </div>
 
-        <button className="contact-submit" type="submit">
+        {sentName !== '' && (
+          <p className="contact-success" role="status">
+            ¡Gracias, {sentName}! Recibimos tu mensaje (envío simulado).
+          </p>
+        )}
+
+        <button className="button button--light contact-submit" type="submit">
           Enviar mensaje
         </button>
       </form>

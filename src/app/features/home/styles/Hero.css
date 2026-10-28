@@ -32,6 +32,12 @@
   align-self: end;
   height: 66%;
   object-position: top;
+  animation: tower-rise 1000ms ease-out both;
+}
+
+@keyframes tower-rise {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
 }
 
 .hero__shade {
@@ -66,9 +72,6 @@
 }
 
 .hero__tag {
-  padding: 8px 18px;
-  border-radius: var(--radius-pill);
-  font-size: 0.85rem;
   white-space: nowrap;
 }
 
@@ -128,6 +131,16 @@
     display: none;
   }
 
+  .hero__tags {
+    gap: 8px;
+    padding: 0 12px;
+  }
+
+  .hero__tag {
+    padding: 8px 10px;
+    font-size: 0.7rem;
+  }
+
   .hero__bottom {
     grid-template-columns: minmax(0, 1fr);
     justify-items: center;
@@ -135,5 +148,11 @@
     gap: 16px;
     padding: 0 20px;
     text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__tower {
+    animation: none;
   }
 }

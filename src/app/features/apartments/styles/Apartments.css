@@ -1,17 +1,7 @@
-.apartments-title {
-  margin-top: 0;
-}
-
-.apartments-message {
-  padding: 32px 0;
-  text-align: center;
-  color: var(--color-muted);
-}
-
 .apartments-toolbar {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
-  gap: 16px;
+  gap: 20px;
   margin-bottom: 24px;
 }

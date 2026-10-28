@@ -16,7 +16,7 @@ const Hero = () => {
 
       <ul className="hero__tags">
         {tags.map((tag) => (
-          <li key={tag} className="hero__tag glass">
+          <li key={tag} className="hero__tag tag glass">
             {tag}
           </li>
         ))}

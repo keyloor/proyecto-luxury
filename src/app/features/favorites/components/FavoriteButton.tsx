@@ -1,5 +1,4 @@
 import { useFavorites } from '../context/FavoritesContext'
-import '../styles/FavoriteButton.css'
 
 interface FavoriteButtonProps {
   id: number
@@ -12,7 +11,7 @@ const FavoriteButton = ({ id }: FavoriteButtonProps) => {
   return (
     <button
       type="button"
-      className={active ? 'favorite-button active' : 'favorite-button'}
+      className={active ? 'button button--light' : 'button button--glass glass'}
       onClick={() => toggleFavorite(id)}
       aria-pressed={active}
       aria-label={active ? 'Quitar de favoritos' : 'Agregar a favoritos'}
