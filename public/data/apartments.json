@@ -8,7 +8,7 @@
     "bedrooms": 3,
     "bathrooms": 3,
     "area": 240,
-    "image": "/images/apartamentos/apartamento-01.jpg",
+    "image": "/images/apartamentos/apartamento-01.webp",
     "amenities": ["Terraza privada", "Piscina", "Gimnasio", "Seguridad 24/7"],
     "featured": true
   },
@@ -21,7 +21,7 @@
     "bedrooms": 2,
     "bathrooms": 2,
     "area": 150,
-    "image": "/images/apartamentos/apartamento-02.jpg",
+    "image": "/images/apartamentos/apartamento-02.webp",
     "amenities": ["Gimnasio", "Parqueo doble", "Bodega"],
     "featured": false
   },
@@ -34,7 +34,7 @@
     "bedrooms": 2,
     "bathrooms": 2,
     "area": 165,
-    "image": "/images/apartamentos/apartamento-03.jpg",
+    "image": "/images/apartamentos/apartamento-03.webp",
     "amenities": ["Piscina", "Área de coworking", "Seguridad 24/7"],
     "featured": false
   },
@@ -47,7 +47,7 @@
     "bedrooms": 2,
     "bathrooms": 2,
     "area": 130,
-    "image": "/images/apartamentos/apartamento-04.jpg",
+    "image": "/images/apartamentos/apartamento-04.webp",
     "amenities": ["Piscina", "Gimnasio", "Pet friendly"],
     "featured": false
   },
@@ -60,7 +60,7 @@
     "bedrooms": 3,
     "bathrooms": 3,
     "area": 210,
-    "image": "/images/apartamentos/apartamento-05.jpg",
+    "image": "/images/apartamentos/apartamento-05.webp",
     "amenities": ["Campo de golf", "Piscina", "Cuarto de servicio", "Seguridad 24/7"],
     "featured": true
   },
@@ -73,7 +73,7 @@
     "bedrooms": 3,
     "bathrooms": 2,
     "area": 145,
-    "image": "/images/apartamentos/apartamento-06.jpg",
+    "image": "/images/apartamentos/apartamento-06.webp",
     "amenities": ["Jardín privado", "Pet friendly", "Parqueo doble"],
     "featured": false
   },
@@ -86,7 +86,7 @@
     "bedrooms": 1,
     "bathrooms": 1,
     "area": 90,
-    "image": "/images/apartamentos/apartamento-07.jpg",
+    "image": "/images/apartamentos/apartamento-07.webp",
     "amenities": ["Gimnasio", "Azotea social", "Seguridad 24/7"],
     "featured": false
   },
@@ -99,7 +99,7 @@
     "bedrooms": 2,
     "bathrooms": 2,
     "area": 120,
-    "image": "/images/apartamentos/apartamento-08.jpg",
+    "image": "/images/apartamentos/apartamento-08.webp",
     "amenities": ["Amueblado", "Gimnasio", "Área de coworking"],
     "featured": false
   },
@@ -112,7 +112,7 @@
     "bedrooms": 2,
     "bathrooms": 2,
     "area": 125,
-    "image": "/images/apartamentos/apartamento-09.jpg",
+    "image": "/images/apartamentos/apartamento-09.webp",
     "amenities": ["Terraza", "Piscina", "Parqueo de visitas"],
     "featured": false
   },
@@ -125,7 +125,7 @@
     "bedrooms": 1,
     "bathrooms": 1,
     "area": 75,
-    "image": "/images/apartamentos/apartamento-10.jpg",
+    "image": "/images/apartamentos/apartamento-10.webp",
     "amenities": ["Gimnasio", "Lavandería", "Seguridad 24/7"],
     "featured": false
   },
@@ -138,7 +138,7 @@
     "bedrooms": 2,
     "bathrooms": 2,
     "area": 140,
-    "image": "/images/apartamentos/apartamento-11.jpg",
+    "image": "/images/apartamentos/apartamento-11.webp",
     "amenities": ["Piscina en azotea", "Gimnasio", "Sala de cine"],
     "featured": false
   },
@@ -151,7 +151,7 @@
     "bedrooms": 2,
     "bathrooms": 2,
     "area": 135,
-    "image": "/images/apartamentos/apartamento-12.jpg",
+    "image": "/images/apartamentos/apartamento-12.webp",
     "amenities": ["Senderos", "Piscina", "Pet friendly"],
     "featured": false
   },
@@ -164,7 +164,7 @@
     "bedrooms": 1,
     "bathrooms": 2,
     "area": 100,
-    "image": "/images/apartamentos/apartamento-13.jpg",
+    "image": "/images/apartamentos/apartamento-13.webp",
     "amenities": ["Estudio", "Gimnasio", "Bicicletero"],
     "featured": false
   },
@@ -177,7 +177,7 @@
     "bedrooms": 3,
     "bathrooms": 3,
     "area": 220,
-    "image": "/images/apartamentos/apartamento-14.jpg",
+    "image": "/images/apartamentos/apartamento-14.webp",
     "amenities": ["Frente al mar", "Piscina infinita", "Terraza", "Seguridad 24/7"],
     "featured": true
   },
@@ -190,7 +190,7 @@
     "bedrooms": 2,
     "bathrooms": 2,
     "area": 155,
-    "image": "/images/apartamentos/apartamento-15.jpg",
+    "image": "/images/apartamentos/apartamento-15.webp",
     "amenities": ["Piscina", "Jardín tropical", "Amueblado"],
     "featured": false
   },
@@ -203,7 +203,7 @@
     "bedrooms": 2,
     "bathrooms": 2,
     "area": 145,
-    "image": "/images/apartamentos/apartamento-16.jpg",
+    "image": "/images/apartamentos/apartamento-16.webp",
     "amenities": ["Vista al mar", "Piscina", "Gimnasio"],
     "featured": false
   },
@@ -216,7 +216,7 @@
     "bedrooms": 3,
     "bathrooms": 4,
     "area": 260,
-    "image": "/images/apartamentos/apartamento-17.jpg",
+    "image": "/images/apartamentos/apartamento-17.webp",
     "amenities": ["Marina", "Club de playa", "Piscina", "Seguridad 24/7"],
     "featured": false
   },
@@ -229,7 +229,7 @@
     "bedrooms": 4,
     "bathrooms": 4,
     "area": 320,
-    "image": "/images/apartamentos/apartamento-18.jpg",
+    "image": "/images/apartamentos/apartamento-18.webp",
     "amenities": ["Piscina privada", "Vista a la bahía", "Cuarto de servicio", "Seguridad 24/7"],
     "featured": true
   },
@@ -242,7 +242,7 @@
     "bedrooms": 3,
     "bathrooms": 2,
     "area": 190,
-    "image": "/images/apartamentos/apartamento-19.jpg",
+    "image": "/images/apartamentos/apartamento-19.webp",
     "amenities": ["Vista al mar", "Piscina", "Terraza"],
     "featured": false
   },
@@ -255,7 +255,7 @@
     "bedrooms": 1,
     "bathrooms": 1,
     "area": 85,
-    "image": "/images/apartamentos/apartamento-20.jpg",
+    "image": "/images/apartamentos/apartamento-20.webp",
     "amenities": ["Cerca de la playa", "Piscina", "Amueblado"],
     "featured": false
   }

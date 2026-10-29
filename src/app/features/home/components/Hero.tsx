@@ -5,7 +5,7 @@ const tags = ['Diseño contemporáneo', 'Seguridad 24/7', 'Vistas abiertas']
 const Hero = () => {
   return (
     <section className="hero">
-      <img className="hero__image" src="/images/portada-cielo.jpg" alt="" />
+      <img className="hero__image" src="/images/portada-cielo.webp" alt="" />
       <h1 className="hero__title">Noir</h1>
       <img
         className="hero__tower"
