@@ -18,7 +18,7 @@ const Footer = () => {
       </div>
 
       <p className="container footer__copyright">
-        © {year} · Proyecto académico
+        © {year} Apartamentos Noir · Proyecto académico
       </p>
     </footer>
   )

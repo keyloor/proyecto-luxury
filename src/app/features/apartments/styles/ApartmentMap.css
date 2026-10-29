@@ -1,0 +1,37 @@
+.apartment-map {
+  margin-top: 40px;
+}
+
+.apartment-map-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.apartment-map-heading h2 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.apartment-map iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: var(--radius);
+  filter: grayscale(1);
+}
+
+.apartment-map-credit {
+  margin: 12px 0 0;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+@media (max-width: 600px) {
+  .apartment-map iframe {
+    height: 260px;
+  }
+}

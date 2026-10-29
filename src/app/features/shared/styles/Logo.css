@@ -1,5 +1,6 @@
 .logo {
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-weight: 700;
+  display: block;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
 }

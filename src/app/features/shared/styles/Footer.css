@@ -1,6 +1,7 @@
 .footer {
+  margin-top: 64px;
   border-top: 1px solid var(--color-border);
-  padding: 24px 0;
+  padding: 40px 0 28px;
 }
 
 .footer__inner {
@@ -8,16 +9,27 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 24px;
 }
 
 .footer__links {
   display: flex;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.footer__links a {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--color-muted);
+}
+
+.footer__links a:hover {
+  color: var(--color-text);
 }
 
 .footer__copyright {
-  margin-top: 16px;
+  margin-top: 28px;
   color: var(--color-muted);
-  font-size: 0.875rem;
+  font-size: 0.8rem;
 }

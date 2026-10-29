@@ -1,0 +1,54 @@
+.apartment-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.apartment-card-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.apartment-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+}
+
+.apartment-card-body p,
+.apartment-card-name {
+  margin: 0;
+}
+
+.apartment-card-name {
+  font-size: 1.35rem;
+}
+
+.apartment-card-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+.apartment-card-price {
+  font-size: 1.35rem;
+}
+
+.apartment-card-price span {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+.apartment-card-link {
+  justify-content: space-between;
+  margin-top: auto;
+}
